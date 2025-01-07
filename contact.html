@@ -85,22 +85,54 @@ Kent</p>
     </div>
  </div>
     <div >
-    <form action="" style="background-color: #eff2f6;padding: 20px;border-radius: 10px;">
-        <label for="">Company</label>
-        <input type="text" name="" id="" ><br>
-        <label for="">First name</label><br>
-        <input type="text" name="" id=""><br>
-        <label for="">Last name</label><br>
-        <input type="text" name="" id=""><br>
-        <label for="">Phone</label><br>
-        <input type="tel" name="" id=""><br>
-        <label for="">Email</label><br>
-        <input type="email" name="" id=""><br>
-        <label for="">Tell us a little bit more about your enquiry</label><br>
-        <textarea name="" id=""></textarea><br>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
+      <form 
+      id="emailForm" 
+      style="background-color: #eff2f6; padding: 20px; border-radius: 10px;" 
+      onsubmit="sendEmail(event)">
+      <label for="company">Company</label><br>
+      <input type="text" name="company" id="company" required><br><br>
+  
+      <label for="first_name">First name</label><br>
+      <input type="text" name="first_name" id="first_name" required><br><br>
+  
+      <label for="last_name">Last name</label><br>
+      <input type="text" name="last_name" id="last_name" required><br><br>
+  
+      <label for="phone">Phone</label><br>
+      <input type="tel" name="phone" id="phone" required><br><br>
+  
+      <label for="email">Email</label><br>
+      <input type="email" name="email" id="email" required><br><br>
+  
+      <label for="enquiry">Tell us a little bit more about your enquiry</label><br>
+      <textarea name="enquiry" id="enquiry" required></textarea><br><br>
+  
+      <button type="submit">Submit</button>
+  </form>
+  
+  <script>
+  function sendEmail(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+      
+      // Get the form data
+      const company = document.getElementById('company').value;
+      const firstName = document.getElementById('first_name').value;
+      const lastName = document.getElementById('last_name').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const enquiry = document.getElementById('enquiry').value;
+      
+      // Construct the mailto link
+      const subject = `New Enquiry from ${firstName} ${lastName}`;
+      const body = `Company: ${company}\nFirst Name: ${firstName}\nLast Name: ${lastName}\nPhone: ${phone}\nEmail: ${email}\n\nEnquiry:\n${enquiry}`;
+      
+      const mailtoLink = `mailto:Info@crownworldltd.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open the mailto link
+      window.location.href = mailtoLink;
+  }
+  </script>
+  
    </div>
 </div>
 
