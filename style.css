@@ -107,27 +107,27 @@ div{
 }
 button{
     padding: 10px;color: #000000;background-color: #3fbdee;
-    border: none;
+    border: none;color: #fff;border-radius: 5px;
 }
 button a{
     text-decoration: none;color: #fff;font-size: 19px;
 }
 button:hover{
-    background-color: #ffffff;border: 1px solid #3fbdee;
+    background-color: #ffffff;border: 1px solid #3fbdee;color: #000000;
 }
 button a:hover{
    color: #000000;
 }
 #bg{
-    height: 400px;
-    background-image:url(images/7-Characteristics-of-a-Quality-Caregiver.jpg);
+    height: 500px;
+    background-image:url(images/sykepleier.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     position:relative;
   }
   #bg1{
     height: 450px;
-    background-image:url(images/7-Characteristics-of-a-Quality-Caregiver.jpg);
+    background-image:url(images/sykepleier.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
